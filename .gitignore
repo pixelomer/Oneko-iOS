@@ -1,0 +1,15 @@
+*
+!Resources/
+!Resources/*.gif
+!.gitignore
+!bundle.sh
+!control
+!macros.h
+!Makefile
+!Oneko.h
+!Oneko.m
+!Oneko.plist
+!resources.h
+!Tweak.xm
+!README.md
+!BUILDING.md
