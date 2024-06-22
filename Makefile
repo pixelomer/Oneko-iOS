@@ -8,7 +8,7 @@ TWEAK_NAME = Oneko
 
 Oneko_FILES = Oneko.m resources.m Tweak.xm
 Oneko_CFLAGS = -include macros.h -Wno-deprecated-declarations
-Tweak.x_CFLAGS = -fobjc-arc
+Tweak.xm_CFLAGS = -fobjc-arc
 resources.m_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
