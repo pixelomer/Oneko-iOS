@@ -15,6 +15,7 @@
 @interface SpringBoard : UIApplication
 - (BOOL)isLocked;
 - (NSSet<UIWindowScene *> *)connectedScenes;
+- (UIInterfaceOrientation)activeInterfaceOrientation;
 @end
 
 @interface OnekoWindow : UIWindow
@@ -156,7 +157,7 @@ static void onekoTimerTick() {
         return;
     }
     neko.hidden = NO;
-    UIInterfaceOrientation orientation = [springboard statusBarOrientation];
+    UIInterfaceOrientation orientation = [springboard activeInterfaceOrientation];
     if ([window interfaceOrientation] != orientation) {
         CGSize vcSize = [viewController.view bounds].size;
         UIInterfaceOrientation from = [window interfaceOrientation];
