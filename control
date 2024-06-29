@@ -6,4 +6,4 @@ Description: Oneko for iOS
 Maintainer: pixelomer
 Author: pixelomer
 Section: Tweaks
-Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 13.0)
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 15.0)

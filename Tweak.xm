@@ -125,15 +125,18 @@ static Oneko *neko;
 static OnekoWindow *window;
 static NSTimer *timer;
 
+@interface UITouchesEvent : NSObject
+@end
+
 %hook UITouchesEvent
 
 -(void)_setHIDEvent:(id)event {
     %orig;
     NSSet<UITouch *> *touches;
     if (@available(iOS 11.0, *)) {
-        touches = [MSHookIvar<NSMutableSet *>(self, "_allTouchesMutable") copy];
+        touches = [(NSMutableSet *)[self valueForKey:@"_allTouchesMutable"] copy];
     } else {
-        touches = MSHookIvar<NSSet *>(self, "_touches");
+        touches = (NSSet *)[self valueForKey:@"_allTouches"];
     }
     if (touches.count == 0) {
         return;

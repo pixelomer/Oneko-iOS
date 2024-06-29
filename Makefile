@@ -1,6 +1,11 @@
-TARGET := iphone:13.7:13.0
+ifeq ($(SIMULATOR),1)
+TARGET := simulator:clang::14.0
+ARCHS = arm64
+else
+TARGET := iphone:15.6:15.0
 ARCHS = arm64e arm64
 INSTALL_TARGET_PROCESSES = SpringBoard
+endif
 
 include $(THEOS)/makefiles/common.mk
 
